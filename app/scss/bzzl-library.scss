@@ -1,0 +1,143 @@
+//设计稿尺寸以及ppi
+$default-ui-size : 1920; //设计搞尺寸
+$default-ui-ppi : 1; //设计搞ppi
+//$default-window-size : 320, 360, 375, 412, 414, 480, 860, 1366, 1440, 1600, 1680, 1920; //需要兼容的尺寸
+$default-window-size : 860, 1366, 1440, 1600, 1680, 1920; //需要兼容的尺寸
+//全局颜色
+$default-white-bgColor : #f5f5f5 !default;
+$default-body-bgColor : #f1f4f9 !default;
+$default-gray-bgColor : #42444e !default;
+$default-black-fColor : #676767 !default;
+$default-white-fColor : #e9e9e9 !default;
+$default-orange-fColor : #ff7b29 !default;
+$default-green-fColor : #2db34a !default;
+$default-white : #fff !default;
+$img-url : "../images/" !default; //全局图片路径
+// 全局单位换算
+@function px($px) {
+	@if $px == auto {
+		@return auto;
+	} @else {
+		@return $px / (1 * $default-ui-ppi) + px;
+	}
+}
+
+@function rem($px) {
+	@if $px == auto {
+		@return auto;
+	} @else {
+		@return $px / (16 * $default-ui-ppi) + rem;
+	}
+}
+
+// 绝对居中
+// 全局背景显示 $url 图片路径 $position 图片位置 $rep 平铺
+@mixin bgImg($url,$bgSize:100% 100%,$position:center,$rep:no-repeat,$bgColor:transparent) {
+	background   : {
+		image    : url($img-url + $url);
+		position : $position;
+		repeat   : $rep;
+		color    : $bgColor;
+	}
+}
+
+// 全局过度动画
+@mixin transition($attr:all,$time:.2s,$type:linear,$delay:null) {
+	transition          : {
+		property        : $attr;
+		duration        : $time;
+		timing-function : $type;
+		delay           : $delay;
+	}
+}
+
+// 全局媒体查询
+@mixin fontSize($size:$default-ui-size) {
+	font-size : $size / ($default-ui-size / $default-ui-ppi) * 100%;
+}
+
+@mixin min-screen($res) {
+	@media only screen and (min-width : $res) {
+		@content;
+	}
+}
+
+@each $animal in $default-window-size {
+	@include min-screen($animal + px) {
+		html {
+			@include fontSize($animal);
+		}
+	}
+}
+
+//mixin 函数
+@mixin hover($c:w) {
+	a {
+		@if $c == w {
+			color : $default-white-fColor;
+			&:hover {
+				color : $default-green-fColor;
+			}
+		} @else {
+			color : $default-black-fColor;
+			&:hover {
+				color : $default-orange-fColor;
+			}
+		}
+	}
+}
+
+//全局旋转
+@mixin hover-animate($r:360deg) {
+	@include transition(transform, .5s, linear);
+	&:hover {
+		transform : rotate($r);
+	}
+}
+
+//绝对居中
+@mixin display-center {
+	display         : flex;
+	justify-content : center;
+	align-items     : center;
+}
+
+//垂直排列绝对居中
+@mixin display-center-column {
+	display         : flex;
+	flex-direction  : column;
+	justify-content : center;
+	align-items     : center;
+}
+
+//强制换行
+@mixin display-wrap {
+	display   : flex;
+	flex-wrap : wrap;
+}
+
+//判断方向
+@mixin arr($arr) {
+	@if $arr == up {
+		transform : translate3d(0, -100%, 0);
+	} @else if $arr == right {
+		transform : translate3d(-100%, 0, 0);
+	} @else if $arr == down {
+		transform : translate3d(0, 100%, 0);
+	} @else if $arr == left {
+		transform : translate3d(100%, 0, 0);
+	}
+}
+
+//归零
+@mixin arrBack {
+	transform : translate3d(0, 0, 0);
+}
+
+.green {
+	color : $default-green-fColor !important;
+}
+
+.orange {
+	color : $default-orange-fColor !important;
+}
