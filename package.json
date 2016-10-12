@@ -1,0 +1,22 @@
+{
+  "name": "webjq",
+  "version": "1.0.0",
+  "description": "web标准之路2.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nlwy/webjq.git"
+  },
+  "keywords": [
+    "web标准之路"
+  ],
+  "author": "nlwy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nlwy/webjq/issues"
+  },
+  "homepage": "https://github.com/nlwy/webjq#readme"
+}
