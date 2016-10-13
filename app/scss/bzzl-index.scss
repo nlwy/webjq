@@ -1,4 +1,6 @@
-@import "bzzl-library", //库
+@import
+"bzzl-base.css",//base
+"bzzl-library", //库
 "bzzl-icon", //字体图标
 "bzzl-media"; //媒体查询
 //首页
@@ -40,6 +42,7 @@ body {
 				li {
 					line-height : px(40);
 					a {
+						cursor             : pointer;
 						@include transition(background);
 						@include display-center;
 						span {

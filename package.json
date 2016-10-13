@@ -4,6 +4,8 @@
   "description": "web标准之路2.0",
   "main": "index.js",
   "scripts": {
+    "start": "webpack-dev-server --inline --content-base . --progress",
+    "build": "NODE_ENV=production webpack --config webpack.production.config.js --progress",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,10 +17,14 @@
   ],
   "author": "nlwy",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nlwy/webjq/issues"
+  },
+  "homepage": "https://github.com/nlwy/webjq#readme",
   "dependencies": {
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
-    "zepto": "^1.2.0"
+    "react-router": "^2.8.1"
   },
   "devDependencies": {
     "autoprefixer": "^6.5.0",
@@ -42,10 +48,6 @@
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "webpack": "^1.13.2",
-    "webpack-dev-server": "^1.16.1",
-  },
-  "bugs": {
-    "url": "https://github.com/nlwy/webjq/issues"
-  },
-  "homepage": "https://github.com/nlwy/webjq#readme"
+    "webpack-dev-server": "^1.16.1"
+  }
 }

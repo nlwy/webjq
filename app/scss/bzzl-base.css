@@ -1,0 +1,45 @@
+@charset "utf-8";
+/*
+*	Css3 reset base.
+*	@Author nlwy update 2016-04-25 15:10:37;
+*	Copyright bzzl 2016.
+*/
+em{ font-style: normal;}
+strong{font-weight: normal;}
+p{ text-align: justify; }
+a{ text-decoration: none;}
+a:active, a:focus {	outline: none;}
+table {	border-spacing:0; border-collapse:collapse; }
+h1,h2,h3,h4,h5,h6,p { line-height: 1.4; font-weight: normal; font-style: normal; }
+nav,ul li,ol li { list-style: none; }
+html,body{
+	font-family: Helvetica,microsoft yahei,Arial,Verdana,sans-serif;
+	-webkit-text-size-adjust:none;				/*chrome默认字体大小          	*/
+}
+*{
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+	-webkit-box-sizing:border-box;				/*宽度扩展到边框宽度          		 */
+	box-sizing:border-box;
+	-webkit-touch-callout: none;
+	/*-webkit-user-select:none;*/               /*文本不可复制                	 */
+	/*-webkit-overflow-scrolling:touch;	*/		/*允许独立的滚动区域和触摸回弹		 */
+	/*-webkit-backface-visibility: hidden;*/	/*未在可视范围元素隐藏        		 */
+}
+input,textarea,button,select{
+	outline: none;
+	background: none;
+	border-radius: 0px;
+	-webkit-appearance:none;					/*ios清除默认样式            		 */
+	-webkit-user-select:text;					/*文本可操作形式              		 */
+	-webkit-tap-highlight-color:rgba(0,0,0,0);	/*默认按下效果隐藏            		 */
+	/*-webkit-user-select:none;					/*文本不可复制                	 */
+	-webkit-touch-callout: none;				/*禁止长按弹出工具栏          		 */
+	font-family: Helvetica,microsoft yahei,Arial,Verdana,sans-serif;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{
+	-webkit-appearance: none;
+}
